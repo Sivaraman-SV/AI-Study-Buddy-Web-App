@@ -89,7 +89,7 @@ body{
     backdrop-filter: blur(10px);
     background-color: transparent;
 }
-.header-right a#tasks:active {
+.header-right a#faq:active {
     background-color: rgb(246, 86, 58);
 }
 
@@ -121,7 +121,11 @@ body{
     font-size: 25px;
     font-weight: bold;
 }
-.header a.tasks{
+.header a#faq{
+    float: right;
+}
+
+.header a#contact{
     float: right;
 }
 .header a:hover {
@@ -130,9 +134,15 @@ body{
 }
 
 .header a.loginbtn {
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    
+}
+
+.header a#signupbtn {
     background-color: rgb(249, 0, 0);
     color: rgb(0, 0, 0);
-    border-radius: 20px;
+    border-radius: 10px;
     
 }
 .header-right{
@@ -156,4 +166,3 @@ body{
         float: none;
     }
 }
-
