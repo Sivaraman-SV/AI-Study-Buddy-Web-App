@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *{ 
     margin: 0;
     padding: 0;
@@ -10,21 +11,24 @@ body{
     background-image: url("https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
     position: absolute;
+    background-repeat:inherit;
+    
 }
 .Homepage{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
 }
 .Homepage .tagline{
-    font-size: 2rem;
+    font-size: 3rem;
     color:white;
-    margin-left: 3rem;
-    margin-top: 8em; 
-    text-align: center;
+    margin-left: 2rem;
+    margin-top: 4em; 
+    text-align:left;
     min-width: 50%;
-    padding-bottom: 10rem;
+    padding-bottom: 2rem;
 }
 
 .Homepage .descript{
@@ -36,24 +40,52 @@ body{
     padding-right: 3rem;
     min-width: 50%;
     min-height: 50%;
+ 
 }
 
 .AboutDesc{
     margin: 2rem;
     margin-right: 40rem;
-    font-family: Poppins;
     padding: 10px;
     font-size: 1.5rem;
     /*border: 2px solid white; */
     position: relative;
-    color:white;
+    color:rgb(0, 0, 0);
+    font-family: "Montserrat", sans-serif;
+    align-items: center;
+    
+    
 }
+/* Style the video to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Ensure the video is behind other content */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+  
+  /* Style the content overlay */
+  .content {
+    position: relative;
+    z-index: 1; /* Ensure content is above the video */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+  }
+  
 
 .AboutDesc h1{
-    text-align: center;
-    font-size: 2rem;
+    text-align: left;
+    font-size: 3rem;
     padding: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 1px;
+    font-family: "Montserrat", sans-serif;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+ 
 }
 
 .subheading{
@@ -61,7 +93,8 @@ body{
     padding: 5px;
     margin-bottom: 20px;
     font-weight: 600;
-    font-style: italic;
+    font-family: "Montserrat", sans-serif;
+    padding-left: 40px;
 }
 .subheading{
     font-size: 2rem;
@@ -70,19 +103,56 @@ body{
     font-weight: 600;
     font-style: bold;
 }
+.animate-charcter
+{
+    padding-top: 17rem;
+    font-family: "Montserrat",sans-serif;
+    padding-left: 3rem;
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 5rem;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
 
 .AboutDesc p{
     font-size: 1.5rem;
     padding: 2.5px;
     margin-bottom: 10px;
     line-height: 1.5;
+    padding-top: 0px;
+}
+.ai{
+    padding-top: 12rem;
+    margin-right: 5rem;
+    
 }
 #logoimage{
     float: left;
     mix-blend-mode: multiply;
 }
 .header{
-    font-family: Poppins;
+    font-family: "Montserrat",sans-serif;
     overflow: hidden;
     background-color: #f1f1f1;
     padding: 20px 10px;
@@ -106,16 +176,20 @@ body{
 
 .header a {
     float: left;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 12px;
     margin:auto;
     text-decoration: none;
     font-size: 18px;
     line-height: 25px;
-    border-radius: 20px;
+    border-radius: 8px;
     align-items: center;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
+    border-color: black;
+    border-width: 2px;
+    margin-right: 2px
+    
 }
 .header a.loio:hover{
     color: rgb(0, 183, 255);
@@ -130,7 +204,7 @@ body{
 }
 .header a:hover {
     background-color: rgb(0, 183, 255);
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .header a.loginbtn {
@@ -143,7 +217,7 @@ body{
 .header a#signupbtn {
     background-color: rgb(0, 183, 255);
     color: rgb(0, 0, 0);
-    border-radius: 10px;
+    border-radius: 8px;
     
 }
 .header-right{
@@ -165,6 +239,7 @@ body{
         float: none;
         display: block;
         text-align: left;
+        
     }
     .header-right{
         float: none;
