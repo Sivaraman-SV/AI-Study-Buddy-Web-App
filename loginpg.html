@@ -1,41 +1,61 @@
 <!DOCTYPE html>
-<html lang="en"> 
-    <head>
-        <script src="loginp.js"></script>
-        <title>Login Page</title>
-        <link rel="stylesheet" href="loginstyle.css">
-    </head>
-    <body class="headtop">
-        <div class="header"> 
-            <img src="bot-logo-rem.png" width='50px' height='50px'id = "logoimage">
-            <a href="#default" class = 'loio' title="Turn Your Life Into A Game">EduFlex</a>
-            <div class="header-right">
-              <a class="loginbtn1" href="loginpg.html" title="Login" target="_blank">Login</a>
-              <a class="loginbtn" href="signup.html" title="Signup" target="_blank" id="signupbtn">Sign-Up</a>
-              <a href = '#faq' id = "faq" title="FAQ">FAQ's</a>
-              <a href="contactpg.html" title="#contact">Contact</a>
-            </div>
-        </div>
-        <br>
-        <div class = "wrapper"><!--wraps the whole login box together-->
-            <div class = login> <!--login box-->
-                <h1>LOGIN</h1>
-                <div class = 'input'> <!--acts as a container for username and password-->
-                    <div class = 'input-field'>
-                        <input type="text" placeholder = 'username'>
-                    </div>
-                    <div class = 'input-field'>
-                        <input type="password" placeholder = 'password'>
-                    </div>
-                </div>
-                <div class = 'remainder'>
-                    <input type="checkbox">Remember Me
-                </div>
-                <div class = 'submit-button'>
-                    <button class = 'login-button'>Login</button>
-                </div>
-            </div>
-        </div>
-        
-    </body>
+<html>
+<head>
+    <title>AI Study Buddy</title>
+    <script>
+        function submitQuestion() {
+            const topic = document.getElementById('topic').value;
+            console.log('Submitting topic:', topic); // Debugging statement
+
+            fetch('http://127.0.0.1:5000/submit-topic', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ topic: topic })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Response:', data); // Debugging statement
+                if (data.status === "success") {
+                    fetchQuestions();
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error)); // Error handling
+        }
+
+        function fetchQuestions() {
+            fetch('http://127.0.0.1:5000/generate-questions')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Questions:', data); // Debugging statement
+                if (data.status === "success") {
+                    const questionsDiv = document.getElementById('questions');
+                    questionsDiv.innerHTML = '';
+                    data.questions.forEach(question => {
+                        const p = document.createElement('p');
+                        p.innerText = question;
+                        questionsDiv.appendChild(p);
+                    });
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error)); // Error handling
+        }
+    </script>
+</head>
+<body>
+    <h1>AI Study Buddy</h1>
+    <div>
+        <label for="topic">Enter Study Topic:</label>
+        <input type="text" id="topic" name="topic">
+        <button onclick="submitQuestion()">Submit</button>
+    </div>
+    <div id="questions">
+        <h2>Generated Questions:</h2>
+    </div>
+</body>
 </html>
