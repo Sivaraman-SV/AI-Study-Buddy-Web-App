@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+
+body{
+    background-image: url("https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.login{
+    background-color:rgba(187, 138, 246,0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,2);
+    padding: 2.5rem 1rem;
+    border-radius: 25px;
+    text-align: center;
+    font-family: Poppins;
+    width: 30rem;
+}
+
+.input-field input{
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-block: 10px;
+}
+
+.input-field input::placeholder{
+    font-size: 1.2rem;
+}
+
+.remember input{
+    margin-inline: 1.2rem;
+}
+
+.login-button{
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    color:white;
+    background-color:black;
+    transition: all 0.5x;
+
+}
+
+.login-button:hover{
+    background-color:dimgray;
+}
+
